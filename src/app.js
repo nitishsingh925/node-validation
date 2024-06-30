@@ -1,5 +1,5 @@
 import express from "express";
-import { user } from "./controllers/user.controller.js";
+import userRouter from "./routes/user.route.js";
 
 const app = express();
 
@@ -7,7 +7,7 @@ app.use(express.json({ limit: "16kb" }));
 
 // routes declaration
 
-app.use("/api/v1/users", user);
+app.use("/api/v1/", userRouter);
 
 // handling not found routes
 
